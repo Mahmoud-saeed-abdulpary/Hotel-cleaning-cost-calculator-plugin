@@ -1,0 +1,489 @@
+/**
+ * Customizer Panel Styles for Hotel Cleaning Calculator PRO
+ *
+ * @package    Hotel_Cleaning_Calculator_Pro
+ * @subpackage Hotel_Cleaning_Calculator_Pro/admin/css
+ * @since      2.0.0
+ */
+
+/* ========================================
+   CUSTOMIZER LAYOUT
+   ======================================== */
+
+.hcc-customizer-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px;
+    height: calc(100vh - 200px);
+}
+
+.hcc-customizer-controls {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.hcc-customizer-preview {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 30px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* ========================================
+   CONTROL SECTIONS
+   ======================================== */
+
+.hcc-control-section {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.hcc-control-section-header {
+    padding: 20px;
+    background: #f9fafb;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.hcc-control-section-header:hover {
+    background: #f3f4f6;
+}
+
+.hcc-control-section-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.hcc-control-section-header .dashicons {
+    color: #6b7280;
+    transition: transform 0.3s ease;
+}
+
+.hcc-control-section.expanded .hcc-control-section-header .dashicons {
+    transform: rotate(180deg);
+}
+
+.hcc-control-section-body {
+    padding: 20px;
+    display: none;
+}
+
+.hcc-control-section.expanded .hcc-control-section-body {
+    display: block;
+}
+
+/* ========================================
+   COLOR CONTROLS
+   ======================================== */
+
+.hcc-color-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.hcc-color-control {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hcc-color-control label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.hcc-color-picker-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.hcc-color-preview {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hcc-color-preview:hover {
+    border-color: #2563eb;
+}
+
+.hcc-color-input {
+    flex: 1;
+    border: none;
+    font-size: 13px;
+    font-family: monospace;
+    color: #4b5563;
+}
+
+.hcc-color-input:focus {
+    outline: none;
+}
+
+/* ========================================
+   THEME PRESET CARDS
+   ======================================== */
+
+.hcc-theme-presets {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.hcc-theme-preset-card {
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hcc-theme-preset-card:hover {
+    border-color: #2563eb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hcc-theme-preset-card.active {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.hcc-theme-preset-name {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.hcc-theme-preset-colors {
+    display: flex;
+    gap: 5px;
+}
+
+.hcc-theme-preset-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   TYPOGRAPHY CONTROLS
+   ======================================== */
+
+.hcc-font-family-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.hcc-font-size-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hcc-font-size-slider {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: #d1d5db;
+    outline: none;
+}
+
+.hcc-font-size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #2563eb;
+    cursor: pointer;
+}
+
+.hcc-font-size-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #2563eb;
+    cursor: pointer;
+    border: none;
+}
+
+.hcc-font-size-value {
+    min-width: 50px;
+    padding: 5px 10px;
+    background: #f3f4f6;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* ========================================
+   LAYOUT CONTROLS
+   ======================================== */
+
+.hcc-layout-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.hcc-layout-option {
+    padding: 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hcc-layout-option:hover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.hcc-layout-option.active {
+    border-color: #2563eb;
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.hcc-layout-option-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.hcc-layout-option-label {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* ========================================
+   SPACING CONTROLS
+   ======================================== */
+
+.hcc-spacing-options {
+    display: flex;
+    gap: 10px;
+}
+
+.hcc-spacing-option {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hcc-spacing-option:hover {
+    border-color: #2563eb;
+}
+
+.hcc-spacing-option.active {
+    border-color: #2563eb;
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+/* ========================================
+   CUSTOM CSS EDITOR
+   ======================================== */
+
+.hcc-css-editor {
+    position: relative;
+}
+
+.hcc-css-textarea {
+    width: 100%;
+    min-height: 300px;
+    padding: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    resize: vertical;
+    background: #1e293b;
+    color: #f1f5f9;
+}
+
+.hcc-css-editor-hint {
+    margin-top: 10px;
+    padding: 10px;
+    background: #eff6ff;
+    border-left: 3px solid #2563eb;
+    font-size: 12px;
+    color: #1e40af;
+}
+
+/* ========================================
+   PREVIEW AREA
+   ======================================== */
+
+.hcc-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hcc-preview-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.hcc-preview-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.hcc-preview-device-buttons {
+    display: flex;
+    gap: 5px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+}
+
+.hcc-device-btn {
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: #6b7280;
+}
+
+.hcc-device-btn:hover {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.hcc-device-btn.active {
+    background: #2563eb;
+    color: #fff;
+}
+
+.hcc-preview-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hcc-preview-content.mobile-view {
+    max-width: 375px;
+    margin: 0 auto;
+}
+
+.hcc-preview-content.tablet-view {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   ACTION BUTTONS
+   ======================================== */
+
+.hcc-customizer-actions {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.hcc-save-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #d1fae5;
+    color: #065f46;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hcc-save-indicator.saving {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.hcc-save-indicator.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .hcc-customizer-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .hcc-customizer-controls {
+        height: auto;
+        max-height: 500px;
+    }
+    
+    .hcc-customizer-preview {
+        height: 600px;
+    }
+}
+
+@media (max-width: 782px) {
+    .hcc-color-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hcc-layout-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .hcc-spacing-options {
+        flex-direction: column;
+    }
+    
+    .hcc-customizer-actions {
+        flex-direction: column;
+    }
+}
