@@ -1,0 +1,277 @@
+/**
+ * Responsive Styles for Hotel Cleaning Calculator PRO
+ *
+ * @package    Hotel_Cleaning_Calculator_Pro
+ * @subpackage Hotel_Cleaning_Calculator_Pro/public/css
+ * @since      2.0.0
+ */
+
+/* ========================================
+   TABLET (768px - 1024px)
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .hcc-calculator-wrapper {
+        padding: 25px;
+    }
+    
+    .hcc-room-fields {
+        gap: 12px;
+    }
+}
+
+/* ========================================
+   MOBILE (below 768px)
+   ======================================== */
+
+@media (max-width: 768px) {
+    
+    /* Wrapper */
+    .hcc-calculator-wrapper {
+        padding: 20px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    /* Header */
+    .hcc-calculator-title {
+        font-size: calc(var(--hcc-font-size) * 1.5);
+    }
+    
+    .hcc-calculator-subtitle {
+        font-size: calc(var(--hcc-font-size) * 0.85);
+    }
+    
+    /* Room Cards */
+    .hcc-room-card {
+        padding: 15px;
+    }
+    
+    .hcc-room-fields {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .hcc-room-number {
+        top: -8px;
+        left: 10px;
+        padding: 3px 10px;
+        font-size: calc(var(--hcc-font-size) * 0.7);
+    }
+    
+    /* Remove Button - Adjust for mobile */
+    .hcc-remove-room {
+        position: static;
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+    }
+    
+    /* Form Elements */
+    .hcc-select,
+    .hcc-input {
+        padding: 12px 14px;
+        font-size: calc(var(--hcc-font-size) * 0.95);
+    }
+    
+    /* Room Subtotal */
+    .hcc-room-subtotal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .hcc-room-subtotal-value {
+        font-size: calc(var(--hcc-font-size) * 1.125);
+    }
+    
+    /* Add Room Button */
+    .hcc-add-room-btn {
+        padding: 12px 16px;
+    }
+    
+    /* Summary */
+    .hcc-calculation-summary {
+        padding: 20px 15px;
+    }
+    
+    .hcc-summary-row {
+        padding: 10px 0;
+    }
+    
+    .hcc-summary-value {
+        font-size: var(--hcc-font-size);
+    }
+    
+    .hcc-total-row .hcc-summary-value {
+        font-size: calc(var(--hcc-font-size) * 1.5);
+    }
+    
+    /* Buttons */
+    .hcc-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .hcc-btn {
+        padding: 12px 20px;
+        font-size: calc(var(--hcc-font-size) * 0.95);
+    }
+    
+    /* Messages */
+    .hcc-message {
+        padding: 12px 15px;
+        font-size: calc(var(--hcc-font-size) * 0.9);
+    }
+}
+
+/* ========================================
+   SMALL MOBILE (below 480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    
+    .hcc-calculator-wrapper {
+        padding: 15px;
+    }
+    
+    .hcc-calculator-title {
+        font-size: calc(var(--hcc-font-size) * 1.3);
+    }
+    
+    .hcc-room-card {
+        padding: 12px;
+    }
+    
+    .hcc-calculation-summary {
+        padding: 15px 12px;
+    }
+    
+    .hcc-btn {
+        padding: 10px 16px;
+    }
+}
+
+/* ========================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ======================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    
+    /* Larger touch targets */
+    .hcc-select,
+    .hcc-input,
+    .hcc-btn,
+    .hcc-remove-room,
+    .hcc-add-room-btn {
+        min-height: 44px;
+    }
+    
+    /* Remove hover effects */
+    .hcc-room-card:hover {
+        border-color: var(--hcc-border-color);
+        box-shadow: none;
+    }
+    
+    .hcc-btn-primary:hover {
+        transform: none;
+    }
+    
+    /* Enhance active states instead */
+    .hcc-btn:active {
+        transform: scale(0.98);
+    }
+    
+    .hcc-remove-room:active {
+        transform: scale(0.95);
+    }
+}
+
+/* ========================================
+   LANDSCAPE ORIENTATION (Mobile)
+   ======================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    
+    .hcc-calculator-wrapper {
+        max-width: 100%;
+    }
+    
+    .hcc-room-fields {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .hcc-actions {
+        flex-direction: row;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    
+    .hcc-calculator-wrapper {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .hcc-add-room-btn,
+    .hcc-remove-room,
+    .hcc-actions {
+        display: none !important;
+    }
+    
+    .hcc-room-card {
+        page-break-inside: avoid;
+    }
+    
+    .hcc-calculation-summary {
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Focus visible for keyboard navigation */
+.hcc-select:focus-visible,
+.hcc-input:focus-visible,
+.hcc-btn:focus-visible,
+.hcc-remove-room:focus-visible,
+.hcc-add-room-btn:focus-visible {
+    outline: 3px solid var(--hcc-primary-color);
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .hcc-room-card {
+        border-width: 3px;
+    }
+    
+    .hcc-btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+    .hcc-calculator-wrapper {
+        /* Dark mode styles can be added here if needed */
+        /* Currently respecting custom colors set by admin */
+    }
+}

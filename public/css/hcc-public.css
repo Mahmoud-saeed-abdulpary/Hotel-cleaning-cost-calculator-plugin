@@ -1,0 +1,492 @@
+/**
+ * Public Styles for Hotel Cleaning Calculator PRO
+ *
+ * @package    Hotel_Cleaning_Calculator_Pro
+ * @subpackage Hotel_Cleaning_Calculator_Pro/public/css
+ * @since      2.0.0
+ */
+
+/* ========================================
+   CSS VARIABLES (Customizable via Admin)
+   ======================================== */
+
+:root {
+    --hcc-primary-color: #2563eb;
+    --hcc-secondary-color: #64748b;
+    --hcc-accent-color: #10b981;
+    --hcc-background-color: #ffffff;
+    --hcc-text-color: #1e293b;
+    --hcc-border-color: #e2e8f0;
+    --hcc-font-family: system-ui, -apple-system, sans-serif;
+    --hcc-font-size: 16px;
+    --hcc-border-radius: 8px;
+}
+
+/* ========================================
+   CALCULATOR WRAPPER
+   ======================================== */
+
+.hcc-calculator-wrapper {
+    font-family: var(--hcc-font-family);
+    font-size: var(--hcc-font-size);
+    color: var(--hcc-text-color);
+    background-color: var(--hcc-background-color);
+    padding: 30px;
+    border-radius: var(--hcc-border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hcc-calculator-wrapper * {
+    box-sizing: border-box;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.hcc-calculator-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--hcc-border-color);
+}
+
+.hcc-calculator-logo {
+    max-width: 200px;
+    max-height: 80px;
+    margin-bottom: 15px;
+}
+
+.hcc-calculator-title {
+    font-size: calc(var(--hcc-font-size) * 1.75);
+    font-weight: 700;
+    color: var(--hcc-text-color);
+    margin: 0 0 10px 0;
+}
+
+.hcc-calculator-subtitle {
+    font-size: calc(var(--hcc-font-size) * 0.9);
+    color: var(--hcc-secondary-color);
+    margin: 0;
+}
+
+/* ========================================
+   ROOMS CONTAINER
+   ======================================== */
+
+.hcc-rooms-container {
+    margin-bottom: 25px;
+}
+
+.hcc-rooms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* ========================================
+   ROOM CARD
+   ======================================== */
+
+.hcc-room-card {
+    background: #ffffff;
+    border: 2px solid var(--hcc-border-color);
+    border-radius: var(--hcc-border-radius);
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hcc-room-card:hover {
+    border-color: var(--hcc-primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.hcc-room-card.removing {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.hcc-room-number {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: var(--hcc-primary-color);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: calc(var(--hcc-font-size) * 0.75);
+    font-weight: 600;
+}
+
+.hcc-room-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+/* ========================================
+   FORM ELEMENTS
+   ======================================== */
+
+.hcc-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hcc-form-label {
+    font-weight: 500;
+    font-size: calc(var(--hcc-font-size) * 0.875);
+    color: var(--hcc-text-color);
+    margin: 0;
+}
+
+.hcc-form-label.required::after {
+    content: " *";
+    color: #ef4444;
+}
+
+.hcc-select,
+.hcc-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--hcc-border-color);
+    border-radius: var(--hcc-border-radius);
+    font-size: var(--hcc-font-size);
+    font-family: var(--hcc-font-family);
+    color: var(--hcc-text-color);
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.hcc-select:focus,
+.hcc-input:focus {
+    outline: none;
+    border-color: var(--hcc-primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.hcc-input::placeholder {
+    color: #94a3b8;
+}
+
+.hcc-input[type="number"]::-webkit-inner-spin-button,
+.hcc-input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+/* ========================================
+   ROOM SUBTOTAL
+   ======================================== */
+
+.hcc-room-subtotal {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--hcc-border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hcc-room-subtotal-label {
+    font-weight: 500;
+    color: var(--hcc-secondary-color);
+}
+
+.hcc-room-subtotal-value {
+    font-size: calc(var(--hcc-font-size) * 1.25);
+    font-weight: 700;
+    color: var(--hcc-primary-color);
+}
+
+/* ========================================
+   REMOVE BUTTON
+   ======================================== */
+
+.hcc-remove-room {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #fee2e2;
+    color: #991b1b;
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--hcc-border-radius);
+    font-size: calc(var(--hcc-font-size) * 0.875);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.hcc-remove-room:hover {
+    background: #ef4444;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ========================================
+   ADD ROOM BUTTON
+   ======================================== */
+
+.hcc-add-room-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: transparent;
+    color: var(--hcc-primary-color);
+    border: 2px dashed var(--hcc-border-color);
+    border-radius: var(--hcc-border-radius);
+    font-size: var(--hcc-font-size);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.hcc-add-room-btn:hover {
+    background: var(--hcc-primary-color);
+    color: white;
+    border-color: var(--hcc-primary-color);
+}
+
+.hcc-add-room-btn::before {
+    content: "+";
+    font-size: calc(var(--hcc-font-size) * 1.5);
+    font-weight: 700;
+}
+
+/* ========================================
+   CALCULATION SUMMARY
+   ======================================== */
+
+.hcc-calculation-summary {
+    background: #f9fafb;
+    border: 2px solid var(--hcc-border-color);
+    border-radius: var(--hcc-border-radius);
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.hcc-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.hcc-summary-row:not(:last-child) {
+    border-bottom: 1px solid var(--hcc-border-color);
+}
+
+.hcc-summary-label {
+    font-size: var(--hcc-font-size);
+    color: var(--hcc-secondary-color);
+}
+
+.hcc-summary-value {
+    font-size: calc(var(--hcc-font-size) * 1.125);
+    font-weight: 600;
+    color: var(--hcc-text-color);
+}
+
+.hcc-discount-row {
+    color: var(--hcc-accent-color);
+}
+
+.hcc-discount-row .hcc-summary-label,
+.hcc-discount-row .hcc-summary-value {
+    color: var(--hcc-accent-color);
+}
+
+.hcc-total-row {
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.hcc-total-row .hcc-summary-value {
+    font-size: calc(var(--hcc-font-size) * 1.75);
+    color: var(--hcc-primary-color);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.hcc-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--hcc-border-radius);
+    font-size: var(--hcc-font-size);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: var(--hcc-font-family);
+}
+
+.hcc-btn-primary {
+    background: var(--hcc-primary-color);
+    color: white;
+}
+
+.hcc-btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hcc-btn-secondary {
+    background: var(--hcc-secondary-color);
+    color: white;
+}
+
+.hcc-btn-secondary:hover {
+    background: #475569;
+}
+
+.hcc-btn-success {
+    background: var(--hcc-accent-color);
+    color: white;
+}
+
+.hcc-btn-success:hover {
+    background: #059669;
+}
+
+.hcc-btn-block {
+    width: 100%;
+    display: block;
+}
+
+.hcc-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   ACTIONS
+   ======================================== */
+
+.hcc-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.hcc-actions .hcc-btn {
+    flex: 1;
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.hcc-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: hcc-spin 1s linear infinite;
+}
+
+@keyframes hcc-spin {
+    to { transform: rotate(360deg); }
+}
+
+.hcc-calculating {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* ========================================
+   MESSAGES
+   ======================================== */
+
+.hcc-message {
+    padding: 15px 20px;
+    border-radius: var(--hcc-border-radius);
+    margin-bottom: 20px;
+    border-left: 4px solid;
+}
+
+.hcc-message.success {
+    background: #d1fae5;
+    border-color: #10b981;
+    color: #065f46;
+}
+
+.hcc-message.error {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #991b1b;
+}
+
+.hcc-message.info {
+    background: #dbeafe;
+    border-color: #2563eb;
+    color: #1e40af;
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.hcc-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--hcc-secondary-color);
+}
+
+.hcc-empty-state-icon {
+    font-size: 64px;
+    opacity: 0.3;
+    margin-bottom: 20px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.hcc-calculator-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hcc-border-color);
+    text-align: center;
+    font-size: calc(var(--hcc-font-size) * 0.875);
+    color: var(--hcc-secondary-color);
+}
+
+.hcc-powered-by {
+    opacity: 0.7;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.hcc-hidden {
+    display: none !important;
+}
+
+.hcc-text-center {
+    text-align: center;
+}
+
+.hcc-mt-1 { margin-top: 10px; }
+.hcc-mt-2 { margin-top: 20px; }
+.hcc-mt-3 { margin-top: 30px; }
+
+.hcc-mb-1 { margin-bottom: 10px; }
+.hcc-mb-2 { margin-bottom: 20px; }
+.hcc-mb-3 { margin-bottom: 30px; }

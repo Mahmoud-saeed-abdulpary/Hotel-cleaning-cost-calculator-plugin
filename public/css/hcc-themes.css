@@ -1,0 +1,82 @@
+/**
+ * Theme Presets for Hotel Cleaning Calculator PRO
+ *
+ * @package    Hotel_Cleaning_Calculator_Pro
+ * @subpackage Hotel_Cleaning_Calculator_Pro/public/css
+ * @since      2.0.0
+ */
+
+/* ========================================
+   MODERN DARK THEME
+   ======================================== */
+
+.hcc-theme-modern-dark {
+    --hcc-primary-color: #6366f1;
+    --hcc-secondary-color: #8b5cf6;
+    --hcc-accent-color: #ec4899;
+    --hcc-background-color: #1e293b;
+    --hcc-text-color: #f1f5f9;
+    --hcc-border-color: #334155;
+}
+
+.hcc-theme-modern-dark .hcc-room-card {
+    background: #0f172a;
+}
+
+.hcc-theme-modern-dark .hcc-calculation-summary {
+    background: #0f172a;
+}
+
+.hcc-theme-modern-dark .hcc-select,
+.hcc-theme-modern-dark .hcc-input {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+/* ========================================
+   PROFESSIONAL THEME
+   ======================================== */
+
+.hcc-theme-professional {
+    --hcc-primary-color: #0ea5e9;
+    --hcc-secondary-color: #06b6d4;
+    --hcc-accent-color: #14b8a6;
+    --hcc-background-color: #ffffff;
+    --hcc-text-color: #0f172a;
+    --hcc-border-color: #cbd5e1;
+}
+
+/* ========================================
+   ELEGANT THEME
+   ======================================== */
+
+.hcc-theme-elegant {
+    --hcc-primary-color: #7c3aed;
+    --hcc-secondary-color: #a855f7;
+    --hcc-accent-color: #d946ef;
+    --hcc-background-color: #faf5ff;
+    --hcc-text-color: #3b0764;
+    --hcc-border-color: #e9d5ff;
+}
+
+.hcc-theme-elegant .hcc-calculator-wrapper {
+    background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%);
+}
+
+/* ========================================
+   MINIMALIST THEME
+   ======================================== */
+
+.hcc-theme-minimalist {
+    --hcc-primary-color: #000000;
+    --hcc-secondary-color: #6b7280;
+    --hcc-accent-color: #000000;
+    --hcc-background-color: #ffffff;
+    --hcc-text-color: #000000;
+    --hcc-border-color: #d1d5db;
+    --hcc-border-radius: 0px;
+}
+
+.hcc-theme-minimalist .hcc-room-card {
+    border-width: 1px;
+}
