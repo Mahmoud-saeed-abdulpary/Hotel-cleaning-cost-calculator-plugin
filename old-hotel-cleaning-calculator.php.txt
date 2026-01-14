@@ -119,37 +119,14 @@ function run_hotel_cleaning_calculator() {
     $customizer->init();
     $translation->init();
     
-    // Load integrations conditionally
-    load_hcc_integrations();
-}
-
-/**
- * Load Elementor widget only when Elementor is active and loaded
- *
- * @since    2.0.0
- */
-function hcc_init_elementor_widget() {
-    // Check if Elementor is installed and activated
-    if ( ! did_action( 'elementor/loaded' ) ) {
-        return;
+    // Load Elementor widget if Elementor is active
+    if ( did_action( 'elementor/loaded' ) ) {
+        require_once HCC_PLUGIN_DIR . 'elementor/class-hcc-elementor-widget.php';
+        add_action( 'elementor/widgets/widgets_registered', 'hcc_register_elementor_widget' );
     }
     
-    // Register the widget
-    add_action( 'elementor/widgets/register', 'hcc_register_elementor_widget' );
-}
-add_action( 'plugins_loaded', 'hcc_init_elementor_widget', 100 );
-
-/**
- * Register Elementor widget
- *
- * @since    2.0.0
- */
-function hcc_register_elementor_widget( $widgets_manager ) {
-    // Load the widget class file here (after Elementor is fully loaded)
-    require_once HCC_PLUGIN_DIR . 'elementor/class-hcc-elementor-widget.php';
-    
-    // Register the widget
-    $widgets_manager->register( new \HCC_Elementor_Widget() );
+    // Load integrations conditionally
+    load_hcc_integrations();
 }
 
 /**
@@ -192,6 +169,15 @@ function load_hcc_integrations() {
     require_once HCC_PLUGIN_DIR . 'integrations/class-hcc-email.php';
     $email = new HCC_Email();
     $email->init();
+}
+
+/**
+ * Register Elementor widget
+ *
+ * @since    2.0.0
+ */
+function hcc_register_elementor_widget() {
+    \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \HCC_Elementor_Widget() );
 }
 
 /**

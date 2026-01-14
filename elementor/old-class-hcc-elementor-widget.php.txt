@@ -11,11 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-// Only define the class if Elementor is loaded
-if ( ! did_action( 'elementor/loaded' ) ) {
-    return;
-}
-
 /**
  * Elementor Hotel Cleaning Calculator Widget
  *
