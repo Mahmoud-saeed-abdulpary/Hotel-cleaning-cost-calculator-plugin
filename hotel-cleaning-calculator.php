@@ -137,11 +137,11 @@ function run_hotel_cleaning_calculator() {
 function load_hcc_integrations() {
     
     // Fluent Forms integration
-    if ( defined( 'FLUENTFORM' ) ) {
-        require_once HCC_PLUGIN_DIR . 'integrations/class-hcc-fluent-forms.php';
-        $fluent_forms = new HCC_Fluent_Forms_Integration();
-        $fluent_forms->init();
-    }
+    // if ( defined( 'FLUENTFORM' ) ) {
+    //     require_once HCC_PLUGIN_DIR . 'integrations/class-hcc-fluent-forms.php';
+    //     $fluent_forms = new HCC_Fluent_Forms_Integration();
+    //     $fluent_forms->init();
+    // }
     
     // Contact Form 7 integration
     if ( defined( 'WPCF7_VERSION' ) ) {
@@ -151,11 +151,11 @@ function load_hcc_integrations() {
     }
     
     // WPForms integration
-    if ( function_exists( 'wpforms' ) ) {
-        require_once HCC_PLUGIN_DIR . 'integrations/class-hcc-wpforms.php';
-        $wpforms = new HCC_WPForms_Integration();
-        $wpforms->init();
-    }
+    // if ( function_exists( 'wpforms' ) ) {
+    //     require_once HCC_PLUGIN_DIR . 'integrations/class-hcc-wpforms.php';
+    //     $wpforms = new HCC_WPForms_Integration();
+    //     $wpforms->init();
+    // }
     
     // Telegram integration
     $telegram_enabled = get_option( 'hcc_telegram_enabled', false );

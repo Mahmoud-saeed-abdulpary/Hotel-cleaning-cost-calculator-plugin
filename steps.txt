@@ -8,13 +8,16 @@ Admin JS (6)
 Admin Partials (9)
 Public CSS (3)
 Public JS (5)
-
-
-
-🔄 REMAINING: 16 FILES
-
 Public Partials (3) - HTML templates
 Elementor (2) - Widget & controls
-Integrations (5) - Telegram, Email, form plugins
+Integrations - Telegram - Contact form 7 - Email
+🔄 REMAINING: 16 FILES
+
+
+
+Integrations (5) - Fluent form - WP Forms
 Templates (3) - Email templates
 Assets (3) - Placeholder images/icons
+
+
+C:\laragon\www\brandfusion\wp-content\plugins\hotel-cleaning-calculator-pro\hotel-cleaning-calculator.php
